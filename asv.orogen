@@ -1,0 +1,37 @@
+name "asv"
+version "0.1"
+
+#using_library "opencv" #otherwise linking will fail
+
+using_task_library "depth_reader"
+using_task_library "canbus"
+using_task_library "hbridge"
+using_task_library "controldev"
+using_task_library "sysmon"
+using_task_library "modem_can"
+using_task_library "uwv_dynamic_model"
+
+deployment 'avalon_back_base_control' do
+    task("hbridge", "hbridge::Task").
+	periodic(0.001).
+        realtime.
+        priority(90)
+
+    task("depth","depth_reader::Task")
+
+    task("can", "canbus::Task").
+    	periodic(0.001).
+	realtime.
+	priority(92)
+
+    add_default_logger.
+    	periodic(0.01)
+end
+
+
+# Never make it periodic, otherwise it does not work correctly
+simple_deployment("controldev", "controldev::Remote")
+
+simple_deployment("sysmon","sysmon::Task")
+simple_deployment("modem","modem_can::Task")
+simple_deployment "uwv_dynamic_model", "uwv_dynamic_model::Task"
