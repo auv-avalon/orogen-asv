@@ -1,7 +1,7 @@
 <package>
 	<depend package="drivers/orogen/canbus" /> 
 	<depend package="drivers/orogen/hbridge" /> 
-	<depend package="drivers/orogen/sysmon" /> 
+	<depend package="avalon/orogen/sysmon" /> 
 	<depend package="avalon/orogen/depth_reader" /> 
         <depend package="dagon/uwv_dynamic_model" />
         <depend package="dagon/orogen/uwv_dynamic_model" />
