@@ -1,9 +1,9 @@
 <package>
 	<depend package="drivers/orogen/canbus" /> 
 	<depend package="drivers/orogen/hbridge" /> 
-	<depend package="avalon/orogen/sysmon" /> 
-	<depend package="avalon/orogen/depth_reader" /> 
-        <depend package="dagon/uwv_dynamic_model" />
-        <depend package="dagon/orogen/uwv_dynamic_model" />
-	<depend package="avalon/orogen/modemCanReader" /> 
+	<depend package="drivers/orogen/controldev" /> 
+	<depend package="control/orogen/auv_control" /> 
+	<depend package="avalon/orogen/asv_localizaion" /> 
+	<depend package="divers/orogen/dfki_imu" /> 
+	<depend package="drvers/orogen/gps" /> 
 </package>
