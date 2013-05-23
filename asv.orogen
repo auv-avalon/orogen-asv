@@ -7,7 +7,7 @@ using_task_library "canbus"
 using_task_library "hbridge"
 using_task_library "controldev"
 using_task_library "auv_control"
-using_task_library "asv_locaization"
+using_task_library "asv_localization"
 using_task_library "dfki_imu"
 using_task_library "gps"
 
@@ -17,7 +17,10 @@ using_task_library "gps"
 
 
 deployment 'asv_base_control' do
-    task("can", "canbus::Task")
+    task("can", "canbus::Task").
+        periodic(0.001).
+        realtime.
+        priority(85)
     task("force_torque_controller", "auv_control::AUVForceTorqueController")
     task("aligned_velocity_controller", "auv_control::AUVAlignedVelocityController")
     task("aligned_controller", "auv_control::AUVAlignedController")
@@ -28,7 +31,7 @@ deployment 'asv_base_control' do
 
     task("asv_localization", "asv_localization::Task")
     task("imu", "dfki_imu::Task")
-    task("gps", "gps::GPSD")
-    task("hb_reader", "hbridge::SensorRead")
+    task("gps", "gps::GPSDTask")
+    task("hb_reader", "hbridge::SensorReader")
     task("hb_writer", "hbridge::CommandWriter")
 end

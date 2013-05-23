@@ -3,7 +3,7 @@
 	<depend package="drivers/orogen/hbridge" /> 
 	<depend package="drivers/orogen/controldev" /> 
 	<depend package="control/orogen/auv_control" /> 
-	<depend package="avalon/orogen/asv_localizaion" /> 
+	<depend package="avalon/orogen/asv_localization" /> 
 	<depend package="drivers/orogen/dfki_imu" /> 
 	<depend package="drivers/orogen/gps" /> 
 </package>
