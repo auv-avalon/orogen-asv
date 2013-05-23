@@ -4,6 +4,6 @@
 	<depend package="drivers/orogen/controldev" /> 
 	<depend package="control/orogen/auv_control" /> 
 	<depend package="avalon/orogen/asv_localizaion" /> 
-	<depend package="divers/orogen/dfki_imu" /> 
-	<depend package="drvers/orogen/gps" /> 
+	<depend package="drivers/orogen/dfki_imu" /> 
+	<depend package="drivers/orogen/gps" /> 
 </package>
