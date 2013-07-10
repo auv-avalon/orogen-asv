@@ -21,13 +21,13 @@ deployment 'asv_base_control' do
         periodic(0.001).
         realtime.
         priority(85)
-    task("force_torque_controller", "auv_control::AUVForceTorqueController")
-    task("aligned_velocity_controller", "auv_control::AUVAlignedVelocityController")
-    task("aligned_controller", "auv_control::AUVAlignedController")
-    task("orientation_controller", "auv_control::AUVOptimalOrientationController")
-    task("world_controller", "auv_control::AUVWorldController")
-    task("relative_controller", "auv_control::AUVRelativeController")
-    task("waypoint_navigator", "auv_control::AUVWaypointNavigator")
+    task("force_torque_controller", "auv_control::ForceTorqueController")
+    task("aligned_velocity_controller", "auv_control::AlignedVelocityController")
+    task("aligned_controller", "auv_control::AlignedPositionController")
+    task("orientation_controller", "auv_control::OptimalOrientationController")
+    task("world_controller", "auv_control::WorldController")
+    task("relative_controller", "auv_control::RelativeController")
+    task("waypoint_navigator", "auv_control::WaypointNavigator")
 
     task("asv_localization", "asv_localization::Task")
     task("imu", "dfki_imu::Task")
